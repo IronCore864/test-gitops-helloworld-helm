@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld
+  namespace: default
+  labels:
+    app.kubernetes.io/name: loadtester
+    app.kubernetes.io/instance: flagger
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+  selector:
+    app: helloworld
